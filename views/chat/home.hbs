@@ -1,0 +1,31 @@
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat</title>
+  </head>
+  <body>
+    <h1>Network Chat</h1>
+    <div class="chat-container">
+
+      <div class="messages-area">
+        {{#each messages}}
+          <div class="message-box">
+            <div class="message-box-top">
+              <span class="message-data">{{User.name}}</span>
+              <span class="message-data">{{this.createdAt}}</span>
+            </div>
+            <p>{{this.message}}</p>
+          </div>
+        {{/each}}
+      </div>
+
+      <form action="chat/messagePost" method="POST" class="message-form">
+        <input type="text" name="message" placeholder="Digite sua mensagem" />
+        <button class="btn"><i class="bi bi-send"></i></button>
+      </form>
+
+    </div>
+  </body>
+</html>
